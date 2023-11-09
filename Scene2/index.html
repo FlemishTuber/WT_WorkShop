@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geluid en externe sources</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Extern 3D-model -->
+      <a-assets>
+        <video id="city-video" crossorigin="anonymous" src="https://cdn.aframe.io/360-video-boilerplate/video/city.mp4" autoplay loop></video>
+      </a-assets>
+      <a-videosphere src="#city-video"></a-videosphere>
+
+      <!-- Complexe animatie -->
+      <a-animation attribute="rotation" dur="2000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+
+      <!-- Geluidseffect -->
+      <a-entity sound="src: /mp3/sound.mp3; autoplay: true; loop: true"></a-entity>
+
+      <!-- Grondvlak -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#6b87ed"></a-plane>
+    </a-scene>
+  </body>
+</html>
